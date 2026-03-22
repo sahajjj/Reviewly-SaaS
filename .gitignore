@@ -3,5 +3,4 @@ node_modules/
 .env
 build_log.txt
 .dev-log.txt
-*.js
-*.mjs
+test-*.js
