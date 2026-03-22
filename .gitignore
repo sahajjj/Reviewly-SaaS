@@ -1,0 +1,7 @@
+node_modules/
+.next/
+.env
+build_log.txt
+.dev-log.txt
+*.js
+*.mjs
