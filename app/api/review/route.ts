@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: 'Missing code or language' }, { status: 400 });
     }
 
-    const isDemoMode = !process.env.OPENAI_API_KEY && !process.env.GEMINI_API_KEY;
+    const isDemoMode = process.env.AI_PROVIDER === 'demo' || (!process.env.OPENAI_API_KEY && !process.env.GEMINI_API_KEY && !process.env.HUGGINGFACE_API_KEY && process.env.AI_PROVIDER !== 'ollama');
 
     // @ts-ignore
     const userId = session.user.id;

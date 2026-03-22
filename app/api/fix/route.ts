@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: 'Missing required parameters' }, { status: 400 });
     }
 
-    const isDemoMode = process.env.AI_PROVIDER === 'demo' || (!process.env.OPENAI_API_KEY && !process.env.GEMINI_API_KEY && process.env.AI_PROVIDER !== 'ollama');
+    const isDemoMode = process.env.AI_PROVIDER === 'demo' || (!process.env.OPENAI_API_KEY && !process.env.GEMINI_API_KEY && !process.env.HUGGINGFACE_API_KEY && process.env.AI_PROVIDER !== 'ollama');
 
     if (isDemoMode) {
       // Return a simulated fixed code for demo purposes
